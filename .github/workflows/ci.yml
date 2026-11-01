@@ -1,0 +1,39 @@
+# 每次推到 main 或開 PR：在三個平台建置並跑全部測試，並確認產生的協定型別跟 schema 一致。
+# 測試不需要真的 Codex：單元測試用記憶體裡的假 app-server，真實整合測試要設 CODEX_INTEGRATION_TESTS=1 才跑。
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+
+      - run: dotnet build PamisWang.CodexAgentSdk.slnx -c Release
+
+      - run: dotnet test PamisWang.CodexAgentSdk.slnx -c Release --no-build
+
+  # 用提交的 schema 重新產生協定型別，結果要跟提交的一樣：避免手改產生檔，或改了產生器卻沒重新產生
+  generated:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - run: python3 tools/generate_protocol.py
+
+      - run: git diff --exit-code -- src/PamisWang.CodexAgentSdk/Protocol/Generated

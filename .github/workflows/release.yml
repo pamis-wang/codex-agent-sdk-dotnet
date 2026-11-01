@@ -1,0 +1,53 @@
+# 推 v* 的 tag 時：測試、打包，用 nuget.org 的 Trusted Publishing 換到暫時的 API key 後上傳。
+# tag 要跟 csproj 的 Version 一致，例如 Version 是 0.1.0-preview.1 就推 v0.1.0-preview.1。
+#
+# 第一次使用前要設定（只做一次）：
+# 1. nuget.org → 使用者名稱 → Trusted Publishing → 新增 policy：
+#    Repository Owner = pamis-wang、Repository = codex-agent-sdk-dotnet、Workflow File = release.yml
+# 2. GitHub repo → Settings → Secrets and variables → Actions → 新增 secret NUGET_USER，
+#    值是 nuget.org 的使用者名稱（profile name，不是 email）
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write  # 讓 GitHub 發 OIDC token，換 nuget.org 的暫時 API key
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+
+      - name: 檢查 tag 與套件版本一致
+        run: |
+          version=$(dotnet msbuild src/PamisWang.CodexAgentSdk -getProperty:Version)
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::tag $GITHUB_REF_NAME 跟 csproj 的 Version $version 不一致"
+            exit 1
+          fi
+
+      - run: dotnet build PamisWang.CodexAgentSdk.slnx -c Release
+
+      - run: dotnet test PamisWang.CodexAgentSdk.slnx -c Release --no-build
+
+      - run: dotnet pack src/PamisWang.CodexAgentSdk -c Release --no-build -o artifacts
+
+      # 暫時的 API key 一小時就失效，放在打包之後、上傳之前才拿
+      - name: NuGet login（OIDC → 暫時 API key）
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      # 同一個資料夾裡的 .snupkg 會一起上傳到符號伺服器
+      - run: dotnet nuget push "artifacts/*.nupkg" --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
