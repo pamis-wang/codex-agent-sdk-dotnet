@@ -15,6 +15,9 @@
     <PackageTags>codex;openai;agent;sdk;ai;llm;app-server</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/pamis-wang/codex-agent-sdk-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/pamis-wang/codex-agent-sdk-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>

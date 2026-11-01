@@ -1,6 +1,6 @@
 # PamisWang.CodexAgentSdk
 
-English | [繁體中文](README.zh-TW.md)
+English | [繁體中文](https://github.com/pamis-wang/codex-agent-sdk-dotnet/blob/main/README.zh-TW.md)
 
 A .NET client for OpenAI Codex: it launches the local `codex app-server` and talks to it over JSON-RPC to start threads, run turns, stream events, and answer approval requests.
 
@@ -23,7 +23,7 @@ Preview; the API may change before 1.0.
 - Beyond the official SDKs: a public `ServerRequestHandler` and `ApprovalMode.User` (Python keeps its approval handler internal), with the handler running in the background; extensible protocol string enums (such as `TurnStatus`) and `Unknown…` union variants, so newer Codex versions don't break parsing; `WarningCallback`; and cancelling `RunAsync` interrupts the turn.
 - Not included: the sync API, the internal-only goal operations, and `launch_args_override`; no Codex runtime is bundled either (the Python SDK depends on `openai-codex-cli-bin`), so install the Codex CLI yourself.
 - Names follow [PamisWang.ClaudeAgentSdk](https://github.com/pamis-wang/claude-agent-sdk-dotnet) (`CodexAgentClient`, `CodexAgentOptions`, `ConnectAsync`, `CliPath`, `WarningCallback`, raw JSON always named `Raw`) rather than the Python names.
-- Full comparisons: [with the official Python and TypeScript SDKs](docs/comparison-with-official-sdks.md), [with PamisWang.ClaudeAgentSdk](docs/claude-vs-codex-dotnet.md)
+- Full comparisons: [with the official Python and TypeScript SDKs](https://github.com/pamis-wang/codex-agent-sdk-dotnet/blob/main/docs/comparison-with-official-sdks.md), [with PamisWang.ClaudeAgentSdk](https://github.com/pamis-wang/codex-agent-sdk-dotnet/blob/main/docs/claude-vs-codex-dotnet.md)
 
 ## Usage
 
@@ -143,4 +143,4 @@ Unit tests use an in-memory fake app-server. Integration tests that launch Codex
 
 ## License
 
-Apache-2.0, see [LICENSE](LICENSE). The notices of the ported source are in [NOTICE](NOTICE).
+Apache-2.0, see [LICENSE](https://github.com/pamis-wang/codex-agent-sdk-dotnet/blob/main/LICENSE). The notices of the ported source are in [NOTICE](https://github.com/pamis-wang/codex-agent-sdk-dotnet/blob/main/NOTICE).

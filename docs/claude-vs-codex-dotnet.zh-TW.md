@@ -8,7 +8,7 @@
 - Claude：PamisWang.ClaudeAgentSdk 0.1.0-preview.5
 - Codex：PamisWang.CodexAgentSdk 0.1.0-preview.1
 
-相關文件：[Codex .NET vs 官方](comparison-with-official-sdks.zh-TW.md)。Claude .NET 與官方 SDK 的對照在 claude-agent-sdk-dotnet repo 的 `docs/comparison-with-official-sdks.zh-TW.md`。
+相關文件：[Codex .NET vs 官方](comparison-with-official-sdks.zh-TW.md)。[Claude .NET 與官方 SDK 的對照](https://github.com/pamis-wang/claude-agent-sdk-dotnet/blob/main/docs/comparison-with-official-sdks.zh-TW.md)在 claude-agent-sdk-dotnet repo。
 
 ## 重點
 

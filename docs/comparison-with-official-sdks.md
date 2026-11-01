@@ -11,7 +11,7 @@ How `PamisWang.CodexAgentSdk` compares with OpenAI's official Codex SDKs for Pyt
 - Protocol schema: Codex CLI 0.166.0
 - openai-codex on PyPI is 0.163.0; the .NET package is ported from the Python source on the repo's main branch. Verified against Codex CLI 0.166.0 on Windows with a ChatGPT sign-in.
 
-Related: [Claude .NET vs Codex .NET](claude-vs-codex-dotnet.md). The comparison of Claude .NET with the official SDKs is in `docs/comparison-with-official-sdks.md` of the claude-agent-sdk-dotnet repo.
+Related: [Claude .NET vs Codex .NET](claude-vs-codex-dotnet.md). The [comparison of Claude .NET with the official SDKs](https://github.com/pamis-wang/claude-agent-sdk-dotnet/blob/main/docs/comparison-with-official-sdks.md) is in the claude-agent-sdk-dotnet repo.
 
 ## Key points
 
