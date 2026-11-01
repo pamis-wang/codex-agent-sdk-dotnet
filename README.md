@@ -9,7 +9,11 @@ A .NET client for OpenAI Codex: it launches the local `codex app-server` and tal
 
 ## Status
 
-Preview; the API may change before 1.0.
+A preview is available on NuGet; the API may still change before 1.0.
+
+```bash
+dotnet add package PamisWang.CodexAgentSdk --prerelease
+```
 
 | Tracks | Version |
 |---|---|

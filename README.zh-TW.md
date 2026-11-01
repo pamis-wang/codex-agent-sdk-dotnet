@@ -9,7 +9,11 @@ OpenAI Codex 的 .NET 用戶端：啟動本機的 `codex app-server`，用 JSON-
 
 ## 狀態
 
-預覽版，1.0 之前 API 可能還會變。
+預覽版已經發佈到 NuGet；1.0 之前 API 可能還會變。
+
+```bash
+dotnet add package PamisWang.CodexAgentSdk --prerelease
+```
 
 | 對照 | 版本 |
 |---|---|
