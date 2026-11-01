@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <!-- NuGet 套件 -->
+  <PropertyGroup>
+    <PackageId>PamisWang.CodexAgentSdk</PackageId>
+    <Version>0.1.0-preview.1</Version>
+    <Authors>Pamis Wang</Authors>
+    <Copyright>Copyright 2026 Pamis Wang</Copyright>
+    <Description>OpenAI Codex 的 .NET 用戶端，透過 codex app-server 執行 thread 與 turn，移植自官方 Python SDK（非官方）。Unofficial .NET client for OpenAI Codex over codex app-server, ported from the official Python SDK.</Description>
+    <PackageTags>codex;openai;agent;sdk;ai;llm;app-server</PackageTags>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <!-- 含移植自 Codex Python SDK 的程式碼，Apache-2.0 要求保留 NOTICE -->
+    <None Include="..\..\NOTICE" Pack="true" PackagePath="\" />
+    <InternalsVisibleTo Include="PamisWang.CodexAgentSdk.Tests" />
+  </ItemGroup>
+
+</Project>

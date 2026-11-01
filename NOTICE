@@ -1,0 +1,17 @@
+PamisWang.CodexAgentSdk
+Copyright 2026 Pamis Wang
+
+This project contains code ported from the OpenAI Codex Python SDK
+(https://github.com/openai/codex/tree/main/sdk/python, commit 67f0994),
+which is licensed under the Apache License, Version 2.0. The ported code was
+translated to C# and modified. The protocol types are generated from the JSON
+schema emitted by Codex CLI 0.166.0 (codex app-server generate-json-schema).
+
+This is an unofficial port and is not affiliated with or endorsed by OpenAI.
+
+The NOTICE file of OpenAI Codex contains the following attribution:
+
+------------------------------------------------------------------------------
+
+OpenAI Codex
+Copyright 2025 OpenAI
