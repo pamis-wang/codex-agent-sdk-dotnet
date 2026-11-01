@@ -11,7 +11,7 @@
 - 協定 schema：Codex CLI 0.166.0
 - PyPI 上的 openai-codex 是 0.163.0；.NET 版移植自 repo main 的 Python 原始碼。實機驗證用 Codex CLI 0.166.0（Windows，ChatGPT 登入）。
 
-相關文件：[Claude .NET vs Codex .NET](claude-vs-codex-dotnet.zh-TW.md)。Claude .NET 與官方 SDK 的對照在 claude-agent-sdk-dotnet repo 的 `docs/comparison-with-official-sdks.zh-TW.md`。
+相關文件：[Claude .NET vs Codex .NET](claude-vs-codex-dotnet.zh-TW.md)。[Claude .NET 與官方 SDK 的對照](https://github.com/pamis-wang/claude-agent-sdk-dotnet/blob/main/docs/comparison-with-official-sdks.zh-TW.md)在 claude-agent-sdk-dotnet repo。
 
 ## 重點
 

@@ -8,7 +8,7 @@ Both SDKs port an official Python SDK to .NET and talk to a local CLI through a 
 - Claude: PamisWang.ClaudeAgentSdk 0.1.0-preview.5
 - Codex: PamisWang.CodexAgentSdk 0.1.0-preview.1
 
-Related: [Codex .NET vs official SDKs](comparison-with-official-sdks.md). The comparison of Claude .NET with the official SDKs is in `docs/comparison-with-official-sdks.md` of the claude-agent-sdk-dotnet repo.
+Related: [Codex .NET vs official SDKs](comparison-with-official-sdks.md). The [comparison of Claude .NET with the official SDKs](https://github.com/pamis-wang/claude-agent-sdk-dotnet/blob/main/docs/comparison-with-official-sdks.md) is in the claude-agent-sdk-dotnet repo.
 
 ## Key points
 
